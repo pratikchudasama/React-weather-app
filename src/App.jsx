@@ -15,7 +15,7 @@ function App() {
       .then((response) => {
         setNewData(response.data);
         setLocation('');
-        setAnimate(true); // Trigger animation
+        setAnimate(true);
       })
       .catch((error) => {
         console.error(error);
@@ -31,9 +31,9 @@ function App() {
   useEffect(() => {
     if (animate) {
       const timer = setTimeout(() => {
-        setData(newData); // Update data with new data
-        setAnimate(false); // End animation after data update
-      }, 500); // Wait for 500ms before updating data
+        setData(newData);
+        setAnimate(false);
+      }, 450); 
       return () => clearTimeout(timer);
     }
   }, [animate, newData]);
